@@ -14,10 +14,9 @@ Build a repeatable SIEM workflow using Wazuh and Windows telemetry, from endpoin
 
 | Path | Purpose |
 |---|---|
-| [`docs/01-lab-overview.md`](docs/01-lab-overview.md) | Scope, objectives and analyst outcomes |
-| [`docs/02-lab-setup.md`](docs/02-lab-setup.md) | Architecture, setup and validation checklist |
-| [`docs/03-analyst-workflow.md`](docs/03-analyst-workflow.md) | Repeatable alert-investigation workflow |
-| [`cases/`](cases/) | Sanitised investigation cases and case template |
+| [`docs/`](docs/) | Lab architecture, setup and analyst workflow |
+| [`detections/`](detections/) | Detection concepts and L1 investigation playbooks |
+| [`cases/`](cases/) | Sanitised investigation cases and reporting template |
 | [`evidence/`](evidence/) | Evidence naming, quality and sanitisation standard |
 
 ## 🏗️ Lab architecture
@@ -44,7 +43,17 @@ Build a repeatable SIEM workflow using Wazuh and Windows telemetry, from endpoin
 6. **Decide** whether to close, monitor or escalate.
 7. **Document** the evidence, verdict and next action.
 
-## 🧠 What this lab is teaching me
+## 🛡️ Detection catalogue
+
+| Detection / investigation | Focus | Status |
+|---|---|---|
+| [Repeated failed logons](detections/01-brute-force-detection.md) | Authentication anomaly / brute-force investigation | 🟡 Lab validation |
+| [Suspicious PowerShell](detections/02-suspicious-powershell.md) | Process context / command investigation | 🟡 Lab validation |
+| [Log clearing / audit tampering](detections/03-log-clearing-investigation.md) | Security telemetry tampering | 🟡 Lab validation |
+
+> **Important:** Detection documents describe the investigation methodology. They are not presented as confirmed production detections until they are validated with lab evidence.
+
+## 🧠 Analyst principle
 **Telemetry quality → detection quality → investigation quality.**
 
 A useful SIEM workflow depends on reliable telemetry, meaningful detections and enough context to support an evidence-based conclusion.
