@@ -1,13 +1,16 @@
 # Wazuh SIEM Home Lab
 
-**SOC Analyst L1 Portfolio Project · SIEM Deployment & Security Monitoring**
+**SOC Analyst L1 Lab · SIEM Deployment · Security Monitoring**
 
-> **Status: Active / being expanded with lab evidence**
+> 🟢 **Status: Active — evidence and detections are being expanded**
 
-## Objective
-Build practical understanding of the SIEM workflow by deploying Wazuh, onboarding endpoint telemetry, validating log ingestion, configuring detections and using dashboards for security monitoring.
+### 🧰 Stack
+<img src="https://img.shields.io/badge/Wazuh-4A90E2?logo=wazuh&logoColor=white" alt="Wazuh"> <img src="https://img.shields.io/badge/Windows-0078D4?logo=windows&logoColor=white" alt="Windows"> <img src="https://img.shields.io/badge/SIEM-Security_Monitoring-555555" alt="SIEM">
 
-## Planned Lab Architecture
+## 🎯 Why I built this lab
+I want hands-on experience with the full SIEM workflow — from getting useful telemetry into the platform to investigating an alert and explaining what the evidence means.
+
+## 🏗️ Lab architecture
 
 ```text
 [ Monitored Endpoint ]
@@ -21,39 +24,31 @@ Build practical understanding of the SIEM workflow by deploying Wazuh, onboardin
    [ Wazuh Dashboard ]
 ```
 
-## Core Workflow
+## 🔎 Analyst workflow
 
 1. Deploy the Wazuh Manager, Indexer and Dashboard.
-2. Install and register Wazuh Agent(s) on monitored endpoints.
+2. Register Wazuh Agent(s) on monitored endpoints.
 3. Onboard relevant Windows/Linux security logs.
 4. Validate ingestion and baseline alerting.
-5. Create or customize detection rules for selected security events.
-6. Use dashboards to investigate alert volume, severity and affected endpoints.
-7. Document observations as an analyst handoff.
+5. Create or customise detections for selected security events.
+6. Investigate alert volume, severity and affected endpoints.
+7. Document the finding as an analyst handoff.
 
-## SOC Skills Demonstrated
+## 🧠 What this lab is teaching me
+**Telemetry quality → detection quality → investigation quality.**
 
-- SIEM deployment and configuration
-- Log-source onboarding
-- Detection-rule concepts
-- Alert investigation
-- Dashboard-based monitoring
-- Understanding the log collection → correlation → alerting pipeline
+A SIEM is only useful to a SOC analyst when the underlying data is available, the detection is meaningful and the alert can be investigated with enough context.
 
-## Evidence Roadmap
+## 📌 Evidence roadmap
 
-The repository will be expanded with sanitized screenshots covering:
+The lab will be expanded with sanitised evidence covering:
 
 - Wazuh dashboard overview
 - Agent registration and health
 - Triggered security alert
-- Detection rule configuration
+- Detection-rule configuration
 - Raw event/log evidence
+- Analyst-style alert write-ups
 
-## Analyst Perspective
-
-This lab is designed to demonstrate that effective SOC monitoring depends on **good telemetry, meaningful detections and evidence-based investigation** rather than simply deploying a security platform.
-
-## Scope & Ethics
-
-Controlled home-lab environment only. No unauthorized production systems are targeted.
+## Scope & ethics
+Controlled home-lab environment only. No unauthorised production systems are targeted.
