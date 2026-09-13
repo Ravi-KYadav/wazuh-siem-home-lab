@@ -1,63 +1,59 @@
 # Wazuh SIEM Home Lab
 
-A self-built home lab implementing Wazuh as a SIEM to collect, parse, correlate, and alert on security events — built to gain hands-on experience with the core SIEM workflows used in a SOC.
+**SOC Analyst L1 Portfolio Project · SIEM Deployment & Security Monitoring**
 
-## 🎯 Objective
+> **Status: Active / being expanded with lab evidence**
 
-To understand how a SIEM works in practice — not just in theory — by deploying one from scratch, feeding it real log data, writing detection rules, and building visibility into a monitored environment.
+## Objective
+Build practical understanding of the SIEM workflow by deploying Wazuh, onboarding endpoint telemetry, validating log ingestion, configuring detections and using dashboards for security monitoring.
 
-## 🧰 Environment & Tools
+## Planned Lab Architecture
 
-| Component | Details |
-|---|---|
-| SIEM Platform | Wazuh (Manager + Indexer + Dashboard) |
-| Host OS | *<!-- e.g. Ubuntu Server 22.04 on VirtualBox / VMware -->* |
-| Monitored Endpoint(s) | *<!-- e.g. Windows 10 VM with Wazuh Agent installed -->* |
-| Virtualization | *<!-- VirtualBox / VMware / Proxmox -->* |
-| Network | *<!-- host-only / NAT network setup -->* |
-
-## 🏗️ Architecture
-
+```text
+[ Monitored Endpoint ]
+          |
+     Wazuh Agent
+          |
+   [ Wazuh Manager ]
+          |
+   [ Wazuh Indexer ]
+          |
+   [ Wazuh Dashboard ]
 ```
-[ Monitored Endpoint(s) ]  --Wazuh Agent-->  [ Wazuh Manager ]  -->  [ Wazuh Indexer ]  -->  [ Wazuh Dashboard ]
-```
 
-*<!-- Replace with your actual architecture diagram/screenshot -->*
+## Core Workflow
 
-## 🔧 Methodology
+1. Deploy the Wazuh Manager, Indexer and Dashboard.
+2. Install and register Wazuh Agent(s) on monitored endpoints.
+3. Onboard relevant Windows/Linux security logs.
+4. Validate ingestion and baseline alerting.
+5. Create or customize detection rules for selected security events.
+6. Use dashboards to investigate alert volume, severity and affected endpoints.
+7. Document observations as an analyst handoff.
 
-1. **Deployment**
-   - Installed the Wazuh stack (Manager, Indexer, Dashboard) on a dedicated VM
-   - Installed the Wazuh Agent on the monitored endpoint(s) and registered it with the Manager
-2. **Log Source Configuration**
-   - Configured log collection for *<!-- e.g. Windows Event Logs, Sysmon, auth logs -->*
-   - Verified log ingestion was flowing correctly into the Indexer
-3. **Detection Rule / Alert Configuration**
-   - Reviewed default Wazuh ruleset and ran test events to confirm baseline alerting
-   - Created/customized rules for *<!-- e.g. failed login attempts, new process execution, file integrity changes -->*
-4. **Dashboard & Visualization**
-   - Built dashboards to visualize alert volume, top event types, and affected endpoints
-   - Configured alert severity thresholds
-
-## 🔍 Key Findings / Screenshots
-
-*<!-- Add 3–5 screenshots here: Wazuh dashboard overview, a triggered alert, the rule that generated it, and the raw log entry. Each screenshot should have a one-line caption explaining what it shows. -->*
-
-**Example caption format:**
-> Screenshot: Wazuh Dashboard showing X alerts triggered over 24 hours, majority classified as [severity level].
-
-## 🧠 Skills Demonstrated
+## SOC Skills Demonstrated
 
 - SIEM deployment and configuration
-- Log source onboarding and normalization
-- Custom detection rule writing
-- Alert triage using dashboard visualizations
-- Understanding of the log collection → correlation → alerting pipeline
+- Log-source onboarding
+- Detection-rule concepts
+- Alert investigation
+- Dashboard-based monitoring
+- Understanding the log collection → correlation → alerting pipeline
 
-## 📚 What I Learned
+## Evidence Roadmap
 
-*<!-- Write 3-4 sentences in your own words: what was harder than expected, what you'd do differently, and how this connects to what a SOC L1 analyst does day-to-day (e.g. "This gave me a first-hand understanding of why log source coverage matters — an alert is only as good as the data feeding it.") -->*
+The repository will be expanded with sanitized screenshots covering:
 
-## 🔗 Related
+- Wazuh dashboard overview
+- Agent registration and health
+- Triggered security alert
+- Detection rule configuration
+- Raw event/log evidence
 
-Part of a 5-project SOC Analyst portfolio. See also: [SOC Alert Triage Practice](https://github.com/Ravi-KYadav/soc-alert-triage-practice) · [MITRE ATT&CK Mapping](https://github.com/Ravi-KYadav/mitre-attack-threat-intel-mapping)
+## Analyst Perspective
+
+This lab is designed to demonstrate that effective SOC monitoring depends on **good telemetry, meaningful detections and evidence-based investigation** rather than simply deploying a security platform.
+
+## Scope & Ethics
+
+Controlled home-lab environment only. No unauthorized production systems are targeted.
