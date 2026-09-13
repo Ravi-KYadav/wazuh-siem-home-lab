@@ -7,48 +7,58 @@
 ### 🧰 Stack
 <img src="https://img.shields.io/badge/Wazuh-4A90E2?logo=wazuh&logoColor=white" alt="Wazuh"> <img src="https://img.shields.io/badge/Windows-0078D4?logo=windows&logoColor=white" alt="Windows"> <img src="https://img.shields.io/badge/SIEM-Security_Monitoring-555555" alt="SIEM">
 
-## 🎯 Why I built this lab
-I want hands-on experience with the full SIEM workflow — from getting useful telemetry into the platform to investigating an alert and explaining what the evidence means.
+## 🎯 Lab objective
+Build a repeatable SIEM workflow using Wazuh and Windows telemetry, from endpoint log collection through alert investigation and L1 analyst handoff.
+
+## 🗺️ Repository map
+
+| Path | Purpose |
+|---|---|
+| [`docs/01-lab-overview.md`](docs/01-lab-overview.md) | Scope, objectives and analyst outcomes |
+| [`docs/02-lab-setup.md`](docs/02-lab-setup.md) | Architecture, setup and validation checklist |
+| [`docs/03-analyst-workflow.md`](docs/03-analyst-workflow.md) | Repeatable alert-investigation workflow |
+| [`cases/`](cases/) | Sanitised investigation cases and case template |
+| [`evidence/`](evidence/) | Evidence naming, quality and sanitisation standard |
 
 ## 🏗️ Lab architecture
 
 ```text
-[ Monitored Endpoint ]
-          |
-     Wazuh Agent
-          |
-   [ Wazuh Manager ]
-          |
-   [ Wazuh Indexer ]
-          |
-   [ Wazuh Dashboard ]
+[ Monitored Windows Endpoint ]
+              |
+         Wazuh Agent
+              |
+       [ Wazuh Manager ]
+              |
+       [ Wazuh Indexer ]
+              |
+       [ Wazuh Dashboard ]
 ```
 
 ## 🔎 Analyst workflow
 
-1. Deploy the Wazuh Manager, Indexer and Dashboard.
-2. Register Wazuh Agent(s) on monitored endpoints.
-3. Onboard relevant Windows/Linux security logs.
-4. Validate ingestion and baseline alerting.
-5. Create or customise detections for selected security events.
-6. Investigate alert volume, severity and affected endpoints.
-7. Document the finding as an analyst handoff.
+1. **Identify** the alert, host, user, timestamp and severity.
+2. **Validate** whether the activity is expected or anomalous.
+3. **Collect** supporting endpoint, account and network evidence.
+4. **Correlate** related events into a timeline.
+5. **Assess** confidence, impact and urgency.
+6. **Decide** whether to close, monitor or escalate.
+7. **Document** the evidence, verdict and next action.
 
 ## 🧠 What this lab is teaching me
 **Telemetry quality → detection quality → investigation quality.**
 
-A SIEM is only useful to a SOC analyst when the underlying data is available, the detection is meaningful and the alert can be investigated with enough context.
+A useful SIEM workflow depends on reliable telemetry, meaningful detections and enough context to support an evidence-based conclusion.
 
 ## 📌 Evidence roadmap
 
-The lab will be expanded with sanitised evidence covering:
+Planned sanitised evidence includes:
 
 - Wazuh dashboard overview
 - Agent registration and health
-- Triggered security alert
+- Triggered security alerts
 - Detection-rule configuration
 - Raw event/log evidence
-- Analyst-style alert write-ups
+- Analyst-style case write-ups
 
 ## Scope & ethics
-Controlled home-lab environment only. No unauthorised production systems are targeted.
+Controlled home-lab environment only. No unauthorised production systems are targeted. Secrets and sensitive data are excluded from public evidence.
